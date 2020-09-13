@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+  infra:
+    build: .
+    networks:
+      - localbound
+    working_dir: /home/src/cq-ops
+    tty: true
+    volumes:
+      - .:/home/src/cq-ops
+  
+networks:
+  localbound:
+    external: true
