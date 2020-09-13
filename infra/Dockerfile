@@ -1,14 +1,15 @@
-FROM hashicorp/terraform:0.13.1
+FROM alpine:3.12
 
-RUN \
-    apt-get -y update \
-    && apt install -y unzip \
-    && rm -rf /var/lib/apt/lists/*
+RUN apk add --no-cache unzip bash
 
-ENV ROOT_DIR /home/src/cq-ops
+ENV ROOT_DIR /home/src/infra
 
-ADD . ${ROOT_DIR}
+WORKDIR $ROOT_DIR
 
-RUN chmod +x ${ROOT_DIR}/scripts/*.sh
+ADD . $ROOT_DIR
+
+USER root
+
+RUN chmod +x $ROOT_DIR/scripts/*.sh && $ROOT_DIR/scripts/terraform_init.sh
 
 CMD ["bash"]
