@@ -1,7 +1,10 @@
 #!/bin/bash
 
-wget https://releases.hashicorp.com/terraform/0.13.1/terraform_0.13.1_linux_amd64.zip
-unzip terraform_0.13.1_linux_amd64.zip
+version=0.13.2
+
+wget https://releases.hashicorp.com/terraform/"$version"/terraform_"$version"_linux_amd64.zip
+unzip terraform_"$version"_linux_amd64.zip
+
 mv terraform /opt/terraform
 ln -s /opt/terraform /usr/local/bin/terraform
-rm -rf terraform_0.13.1_linux_amd64.zip
+rm -rf terraform_"$version"_linux_amd64.zip
