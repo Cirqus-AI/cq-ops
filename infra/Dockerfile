@@ -10,6 +10,6 @@ ADD . $ROOT_DIR
 
 USER root
 
-RUN chmod +x $ROOT_DIR/scripts/*.sh && $ROOT_DIR/scripts/terraform_init.sh
+RUN chmod +x $ROOT_DIR/scripts/*.sh && $ROOT_DIR/scripts/ops_init.sh
 
 CMD ["bash"]
