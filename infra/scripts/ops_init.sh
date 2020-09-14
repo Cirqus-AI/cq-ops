@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Terraform
-version=0.13.2
+version=0.12.6
 
 wget https://releases.hashicorp.com/terraform/"$version"/terraform_"$version"_linux_amd64.zip
 unzip terraform_"$version"_linux_amd64.zip
@@ -17,4 +17,3 @@ apk add curl python3 py-crcmod bash libc6-compat && \
 rm -rf /var/cache/apk/*
 
 curl https://sdk.cloud.google.com > /tmp/gcl && bash /tmp/gcl --install-dir=/root --disable-prompts
-export PATH=$PATH:/root/google-cloud-sdk/bin
