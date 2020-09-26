@@ -1,0 +1,11 @@
+credentials        = "./keyfile.json"
+project_id         = "cirqus-ai"
+region             = "europe-west-4"
+zones              = ["europe-west4-a", "europe-west4-b", "europe-west4-c"]
+name               = "gke-cluster"
+machine_type       = "g1-small"
+min_count          = 1
+max_count          = 3
+disk_size_gb       = 10
+service_account    = "cq-ops@cirqus-ai.iam.gserviceaccount.com"
+initial_node_count = 3
