@@ -1,3 +1,5 @@
+# GKE cluster definition within provided region and without load balancing
+
 module "gke" {
   source                     = "terraform-google-modules/kubernetes-engine/google"
   version                    = "4.1.0"
@@ -14,6 +16,7 @@ module "gke" {
   kubernetes_dashboard       = true
   network_policy             = true
 
+  # Node pools are definition of standardized node running inside the cluster
   node_pools = [
     {
       name               = "default-node-pool"
